@@ -1,0 +1,26 @@
+###################################################################
+#                    FallCraftLogin - BungeeCord                  #
+#             Criado por 1Urso (Gabriel) - 1Urso#8730             #
+#                                                                 #
+#                                                                 #
+#                                                                 #
+#                                                                 #
+#                                                                 #
+###################################################################
+
+
+database:
+  # Tipos suportados MYSQL ou SQLITE
+  type: MYSQL
+  # Em caso de MYSQL informar os seguintes dados
+  ip: 127.0.0.1
+  # Senha do banco
+  password: root
+  # Qual database a ser usado
+  database: root
+
+messages:
+  login_success: "Voce logou com sucesso"
+  login_failed: "Voce teve problemas ao logar"
+
+
