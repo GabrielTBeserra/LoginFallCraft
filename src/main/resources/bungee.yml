@@ -1,4 +1,5 @@
 name: LoginFallCraft
 version: ${project.version}
+author: 1Urso (1Urso#8730)
 main: br.com.urso.loginfallcraft.core.LoginFallCraft
 description: Plugin de autenticação, para Bungee Cord
