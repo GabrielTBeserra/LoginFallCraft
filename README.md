@@ -1,16 +1,16 @@
 # LoginFallCraft
 
-###Configuracaoes
+### Configuracaoes
    - Banco de dados disponiveis (MYSQL/SQLITE)
 
-###Comandos
+### Comandos
    - /register (senha) (senha)
    - /unregister (nome)
    - /login (senha)
    - /changepassword (senha)
    - /loginfallcraft reload
 
-###Permissoes
+### Permissoes
    - `loginfall.unregister`
    - `loginfall.reload`
    
