@@ -31,8 +31,8 @@ public class AccountDAO {
         try {
             String query = "update accounts set password = ? where uuid = ?";
             PreparedStatement preparedStatement = ConnectionFactory.getConnection().prepareStatement(query);
-            preparedStatement.setString(1, uuid.toString());
-            preparedStatement.setString(2, newPassword);
+            preparedStatement.setString(1, newPassword);
+            preparedStatement.setString(2, uuid.toString());
             preparedStatement.execute();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -43,7 +43,7 @@ public class AccountDAO {
         try {
             String query = "delete from accounts where uuid = ?";
             PreparedStatement preparedStatement = ConnectionFactory.getConnection().prepareStatement(query);
-            preparedStatement.setString(1, UUIDResolver.getUUIDFromNick(userName));
+            preparedStatement.setString(1, userName);
             preparedStatement.execute();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -70,11 +70,11 @@ public class AccountDAO {
         return false;
     }
 
-    public boolean isPlayer(UUID uniqueId) {
+    public boolean isPlayer(String uniqueId) {
         String query = "select * from accounts where uuid = ?";
         try {
             PreparedStatement preparedStatement = ConnectionFactory.getConnection().prepareStatement(query);
-            preparedStatement.setString(1, uniqueId.toString());
+            preparedStatement.setString(1, uniqueId);
 
             ResultSet resultSet = preparedStatement.executeQuery();
 

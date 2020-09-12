@@ -19,9 +19,8 @@ public class ConnectionFactory {
             connection = DriverManager.getConnection("jdbc:sqlite:" + pl.getDataFolder() + "/accounts.db");
         } else if (databaseType.equals("mysql")) {
             final String host = ConfigFile.getConfigFile().getString("database.host");
-            final String port = ConfigFile.getConfigFile().getString("database.port");
             final String database = ConfigFile.getConfigFile().getString("database.database");
-            final String URL = "jdbc:mysql://" + host + ":" + port + "/" + database;
+            final String URL = "jdbc:mysql://" + host + "/" + database;
             final String driver = "com.mysql.jdbc.Driver";
             final String user = ConfigFile.getConfigFile().getString("database.user");
             final String password = ConfigFile.getConfigFile().getString("database.password");
@@ -35,7 +34,7 @@ public class ConnectionFactory {
             try {
                 new ConnectionFactory();
             } catch (Exception e) {
-                System.out.println(e.getMessage());
+                e.printStackTrace();
             }
         }
         return connection;

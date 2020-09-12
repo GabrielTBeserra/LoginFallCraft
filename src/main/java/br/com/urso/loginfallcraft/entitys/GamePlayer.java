@@ -5,6 +5,7 @@ import java.net.SocketAddress;
 public class GamePlayer {
     private boolean isLogged;
     private SocketAddress address;
+    private int loginAttempts;
 
     public GamePlayer(SocketAddress address) {
         this.isLogged = false;
@@ -25,5 +26,13 @@ public class GamePlayer {
 
     public void setAddress(SocketAddress address) {
         this.address = address;
+    }
+
+    public int getLoginAttempts() {
+        return loginAttempts;
+    }
+
+    public void setLoginAttempts(int loginAttempts) {
+        this.loginAttempts = loginAttempts;
     }
 }

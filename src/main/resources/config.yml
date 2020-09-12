@@ -9,9 +9,7 @@ database:
   # Tipos suportados MYSQL ou SQLITE
   type: MYSQL
   # Em caso de MYSQL informar os seguintes dados
-  host: 127.0.0.1
-  # Porta
-  port: 3306
+  host: 127.0.0.1:3306
   # Senha do banco
   password: root
   # Usuario do banco
@@ -25,7 +23,21 @@ login_attempts: 3
 online-mode: true
 
 messages:
-  login_success: "Voce logou com sucesso"
-  login_failed: "Voce teve problemas ao logar"
+  login_success: "&aVoce logou com sucesso"
+  register_success: "&aVoce se registrou com sucesso"
+  login_failed: "&cVoce teve problemas ao logar"
+  player_unregistred: "&ePlayer desregistrado com sucesso!"
+  changed_password: "&9Sua senha foi alterada"
+  need_register: "&6Voce precisa se registrar user /register (senha) (senha)"
+  change_password: "&8/changepassword (senha antiga) (nova senha) (confirma nova senha)"
+  need_login: "&4Voce precisa se logar, user /login (senha)"
+  config_reloaded: "&bAs configuracoes foram recarregadas"
+  password_incorrect: "&dSua senha esta incorreta"
+  login_attempts: "Voce possui %attemps% tentativas restantes!"
+  passwords_dont_match: "&cAs senhas nao conferem"
+  player_not_registred: "&9O player nao esta cadastrado"
+  already_registred: "&cVoce ja esta registrado"
+  already_logged: "&4Voce ja esta logado"
+
 
 

@@ -13,6 +13,15 @@ import java.net.URL;
 import java.util.UUID;
 
 public class UUIDResolver {
+    public static boolean isValidName(String name){
+        try {
+            getUUIDFromNick(name);
+            return true;
+        } catch (Exception e){
+            return false;
+        }
+    }
+
     public static String getUUIDFromNick(String name) {
         LoginFallCraft pl = LoginFallCraft.pluginInstance;
 
@@ -33,7 +42,7 @@ public class UUIDResolver {
             if (UUIDJson.isEmpty()) return "invalid name";
             JSONObject UUIDObject = (JSONObject) JSONValue.parseWithException(UUIDJson);
             uuid = UUIDObject.get("id").toString();
-        } catch (IOException | org.json.simple.parser.ParseException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
