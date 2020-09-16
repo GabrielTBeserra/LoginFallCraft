@@ -14,5 +14,7 @@
    - `loginfall.unregister`
    - `loginfall.reload`
    
+### Instalacao
+    Colocar o arquivo na pasta de plugins do BungeeCord e do Spigot
    
     
