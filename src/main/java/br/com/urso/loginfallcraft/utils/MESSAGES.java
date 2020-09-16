@@ -18,6 +18,8 @@ public class MESSAGES {
     public static String CHANGE_PASSWORD;
     public static String ALREADY_REGISTRED;
     public static String ALREADY_LOGGED;
+    public static String WELCOME_LOGIN_MESSAGE;
+    public static String WELCOME_REGISTER_MESSAGE;
 
     public static void loadMessages() {
         CONFIG_RELOADED = ConfigFile.getConfigFile().getString("messages.config_reloaded");
@@ -35,5 +37,7 @@ public class MESSAGES {
         CHANGE_PASSWORD = ConfigFile.getConfigFile().getString("messages.change_password");
         ALREADY_REGISTRED = ConfigFile.getConfigFile().getString("messages.already_registred");
         ALREADY_LOGGED = ConfigFile.getConfigFile().getString("messages.already_logged");
+        WELCOME_LOGIN_MESSAGE = ConfigFile.getConfigFile().getString("messages.welcome_login_message");
+        WELCOME_REGISTER_MESSAGE = ConfigFile.getConfigFile().getString("messages.welcome_register_message");
     }
 }

@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class PluginData {
+public class PluginBungeeData {
     private static final List<ProxiedPlayer> loggedPlayers = new ArrayList<ProxiedPlayer>();
     private static final Map<ProxiedPlayer, GamePlayer> gamePlayerMap = new HashMap<ProxiedPlayer, GamePlayer>();
 

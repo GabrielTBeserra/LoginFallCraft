@@ -20,6 +20,8 @@ database:
 # Quantidade de tentativas para login antes de ser kickado
 login_attempts: 3
 
+address: localhost:25565
+
 online-mode: true
 
 messages:
@@ -38,6 +40,8 @@ messages:
   player_not_registred: "&9O player nao esta cadastrado"
   already_registred: "&cVoce ja esta registrado"
   already_logged: "&4Voce ja esta logado"
+  welcome_login_message: "&5/login (senha)"
+  welcome_register_message: "&a/register (senha)"
 
 
 

@@ -13,11 +13,12 @@ import br.com.urso.loginfallcraft.utils.ChatComponent;
 import br.com.urso.loginfallcraft.utils.MESSAGES;
 import net.md_5.bungee.api.plugin.Plugin;
 
-public final class LoginFallCraft extends Plugin {
-    public static LoginFallCraft pluginInstance;
+public final class LoginFallCraftBungee extends Plugin {
+    public static LoginFallCraftBungee pluginInstance;
 
     @Override
     public void onEnable() {
+
         pluginInstance = this;
 
         ConfigFile.setupConfigFile();
@@ -28,9 +29,13 @@ public final class LoginFallCraft extends Plugin {
             loadEvents();
             loadCommands();
             MESSAGES.loadMessages();
+            getProxy().registerChannel("flogin");
+
         } else {
             this.onDisable();
         }
+
+
     }
 
     @Override

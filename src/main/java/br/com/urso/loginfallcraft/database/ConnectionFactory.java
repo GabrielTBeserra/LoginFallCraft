@@ -1,7 +1,7 @@
 package br.com.urso.loginfallcraft.database;
 
 
-import br.com.urso.loginfallcraft.core.LoginFallCraft;
+import br.com.urso.loginfallcraft.core.LoginFallCraftBungee;
 import br.com.urso.loginfallcraft.data.ConfigFile;
 
 import java.sql.Connection;
@@ -11,7 +11,7 @@ import java.sql.SQLException;
 public class ConnectionFactory {
     public static String databaseType;
     private static Connection connection = null;
-    private final LoginFallCraft pl = LoginFallCraft.pluginInstance;
+    private final LoginFallCraftBungee pl = LoginFallCraftBungee.pluginInstance;
 
     private ConnectionFactory() throws ClassNotFoundException, SQLException {
         if (databaseType.equals("sqlite")) {

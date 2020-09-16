@@ -1,8 +1,9 @@
 package br.com.urso.loginfallcraft.commands.players;
 
-import br.com.urso.loginfallcraft.data.PluginData;
+import br.com.urso.loginfallcraft.data.PluginBungeeData;
 import br.com.urso.loginfallcraft.database.AccountDAO;
 import br.com.urso.loginfallcraft.utils.ChatComponent;
+import br.com.urso.loginfallcraft.utils.CommunicationChannel;
 import br.com.urso.loginfallcraft.utils.Encriptor;
 import br.com.urso.loginfallcraft.utils.MESSAGES;
 import net.md_5.bungee.api.CommandSender;
@@ -26,7 +27,7 @@ public class Register extends Command {
 
         AccountDAO accountDAO = new AccountDAO();
         if (accountDAO.isPlayer(player.getUniqueId().toString())) {
-            if (PluginData.getGamePlayerMap().get(player).isLogged()) {
+            if (PluginBungeeData.getGamePlayerMap().get(player).isLogged()) {
                 ChatComponent.playerSendMessage(MESSAGES.ALREADY_REGISTRED, player);
             } else {
                 ChatComponent.playerSendMessage(MESSAGES.NEED_LOGIN, player);
@@ -37,7 +38,8 @@ public class Register extends Command {
                 if (args[0].equals(args[1])) {
                     accountDAO.register(player.getUniqueId(), Encriptor.toMD5(Encriptor.toSHA1(args[0])));
                     ChatComponent.playerSendMessage(MESSAGES.REGISTER_SUCCESS, player);
-                    PluginData.getGamePlayerMap().get(player).setLogged(true);
+                    PluginBungeeData.getGamePlayerMap().get(player).setLogged(true);
+                    CommunicationChannel.loginAction(player, player.getUniqueId().toString(), "unlock");
                 } else {
                     ChatComponent.playerSendMessage(MESSAGES.PASSWORD_DONT_MATCH, player);
                 }

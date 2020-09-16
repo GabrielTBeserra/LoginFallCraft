@@ -1,14 +1,12 @@
 package br.com.urso.loginfallcraft.utils;
 
-import br.com.urso.loginfallcraft.core.LoginFallCraft;
+import br.com.urso.loginfallcraft.core.LoginFallCraftBungee;
 import br.com.urso.loginfallcraft.data.ConfigFile;
 import org.apache.commons.io.Charsets;
 import org.apache.commons.io.IOUtils;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
-import sun.security.krb5.Config;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.UUID;
 
@@ -23,7 +21,7 @@ public class UUIDResolver {
     }
 
     public static String getUUIDFromNick(String name) {
-        LoginFallCraft pl = LoginFallCraft.pluginInstance;
+        LoginFallCraftBungee pl = LoginFallCraftBungee.pluginInstance;
 
         // Verifica se o servidor esta rodando com online mode on ou off
         if (ConfigFile.getConfigFile().getBoolean("online-mode")) {

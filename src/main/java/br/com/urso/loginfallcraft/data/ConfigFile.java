@@ -1,6 +1,6 @@
 package br.com.urso.loginfallcraft.data;
 
-import br.com.urso.loginfallcraft.core.LoginFallCraft;
+import br.com.urso.loginfallcraft.core.LoginFallCraftBungee;
 import net.md_5.bungee.config.Configuration;
 import net.md_5.bungee.config.ConfigurationProvider;
 import net.md_5.bungee.config.YamlConfiguration;
@@ -12,14 +12,14 @@ import java.nio.file.Files;
 
 public class ConfigFile {
     public static void setupConfigFile() {
-        if (!LoginFallCraft.pluginInstance.getDataFolder().exists())
-            LoginFallCraft.pluginInstance.getDataFolder().mkdir();
+        if (!LoginFallCraftBungee.pluginInstance.getDataFolder().exists())
+            LoginFallCraftBungee.pluginInstance.getDataFolder().mkdir();
 
-        File file = new File(LoginFallCraft.pluginInstance.getDataFolder(), "config.yml");
+        File file = new File(LoginFallCraftBungee.pluginInstance.getDataFolder(), "config.yml");
 
 
         if (!file.exists()) {
-            try (InputStream in = LoginFallCraft.pluginInstance.getResourceAsStream("config.yml")) {
+            try (InputStream in = LoginFallCraftBungee.pluginInstance.getResourceAsStream("config.yml")) {
                 Files.copy(in, file.toPath());
             } catch (IOException e) {
                 e.printStackTrace();
@@ -29,7 +29,7 @@ public class ConfigFile {
 
     public static Configuration getConfigFile() {
         try {
-            return ConfigurationProvider.getProvider(YamlConfiguration.class).load(new File(LoginFallCraft.pluginInstance.getDataFolder(), "config.yml"));
+            return ConfigurationProvider.getProvider(YamlConfiguration.class).load(new File(LoginFallCraftBungee.pluginInstance.getDataFolder(), "config.yml"));
         } catch (IOException e) {
             e.printStackTrace();
             return null;
@@ -38,7 +38,7 @@ public class ConfigFile {
 
     public static void saveConfig(Configuration configuration) {
         try {
-            ConfigurationProvider.getProvider(YamlConfiguration.class).save(configuration, new File(LoginFallCraft.pluginInstance.getDataFolder(), "config.yml"));
+            ConfigurationProvider.getProvider(YamlConfiguration.class).save(configuration, new File(LoginFallCraftBungee.pluginInstance.getDataFolder(), "config.yml"));
         } catch (IOException e) {
             e.printStackTrace();
         }

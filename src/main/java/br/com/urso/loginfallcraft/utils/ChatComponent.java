@@ -1,6 +1,6 @@
 package br.com.urso.loginfallcraft.utils;
 
-import br.com.urso.loginfallcraft.core.LoginFallCraft;
+import br.com.urso.loginfallcraft.core.LoginFallCraftBungee;
 import net.md_5.bungee.api.chat.BaseComponent;
 import net.md_5.bungee.api.chat.ComponentBuilder;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
@@ -11,7 +11,7 @@ public class ChatComponent {
     }
 
     public static void consoleSendMessage(String string) {
-        LoginFallCraft.pluginInstance.getProxy().getConsole().sendMessage(new ComponentBuilder(ChatComponent.format(string)).create());
+        LoginFallCraftBungee.pluginInstance.getProxy().getConsole().sendMessage(new ComponentBuilder(ChatComponent.format(string)).create());
     }
 
     public static BaseComponent[] playerSendMessage(String string) {

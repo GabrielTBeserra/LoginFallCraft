@@ -1,6 +1,6 @@
 package br.com.urso.loginfallcraft.commands.players;
 
-import br.com.urso.loginfallcraft.data.PluginData;
+import br.com.urso.loginfallcraft.data.PluginBungeeData;
 import br.com.urso.loginfallcraft.database.AccountDAO;
 import br.com.urso.loginfallcraft.utils.ChatComponent;
 import br.com.urso.loginfallcraft.utils.Encriptor;
@@ -25,7 +25,7 @@ public class ChangePassword extends Command {
 
         AccountDAO accountDAO = new AccountDAO();
         if (accountDAO.isPlayer(player.getUniqueId().toString())) {
-            if (PluginData.getGamePlayerMap().get(player).isLogged()) {
+            if (PluginBungeeData.getGamePlayerMap().get(player).isLogged()) {
                 if (args.length == 3) {
                     if (accountDAO.login(player.getUniqueId(), Encriptor.toMD5(Encriptor.toSHA1(args[0])))) {
                         if (args[1].equals(args[2])) {
