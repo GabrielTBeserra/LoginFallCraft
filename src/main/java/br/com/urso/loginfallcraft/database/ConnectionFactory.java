@@ -37,6 +37,13 @@ public class ConnectionFactory {
                 e.printStackTrace();
             }
         }
+        try {
+            if(connection.isClosed()){
+                new ConnectionFactory();
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+        }
         return connection;
     }
 }
