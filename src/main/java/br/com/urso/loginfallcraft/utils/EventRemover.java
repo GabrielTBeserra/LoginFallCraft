@@ -2,6 +2,7 @@ package br.com.urso.loginfallcraft.utils;
 
 import br.com.urso.loginfallcraft.core.LoginFallCraftSpigot;
 import br.com.urso.loginfallcraft.data.PluginSpigotData;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;
@@ -130,6 +131,21 @@ public class EventRemover implements Listener {
         }
         p.closeInventory();
         event.setCancelled(true);
+
+    }
+
+    @EventHandler
+    public void onPlayerJoin(PlayerJoinEvent event){
+        Player player = event.getPlayer();
+
+
+        for (Player target: Bukkit.getOnlinePlayers()) {
+            if(target.getAddress().getHostName().equals(player.getAddress().getHostName()) && !player.equals(target)){
+                player.kickPlayer(ChatComponent.format("&4Voce ja esta logado com esse IP no servidor"));
+            }
+        }
+
+
 
     }
 

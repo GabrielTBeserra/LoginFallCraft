@@ -23,15 +23,15 @@ public class GeneralEvents implements Listener {
         if (accountDAO.isPlayer(event.getPlayer().getUniqueId().toString())) {
             ChatComponent.playerSendMessage(MESSAGES.NEED_LOGIN, event.getPlayer());
             Title title = LoginFallCraftBungee.pluginInstance.getProxy().createTitle();
-            title.fadeIn(5);
-            title.fadeOut(5);
+            title.fadeIn(20);
+            title.fadeOut(20);
             title.title(ChatComponent.playerSendMessage(MESSAGES.WELCOME_LOGIN_MESSAGE));
             event.getPlayer().sendTitle(title);
         } else {
             ChatComponent.playerSendMessage(MESSAGES.NEED_REGISTER, event.getPlayer());
             Title title = LoginFallCraftBungee.pluginInstance.getProxy().createTitle();
-            title.fadeIn(5);
-            title.fadeOut(5);
+            title.fadeIn(20);
+            title.fadeOut(20);
             title.title(ChatComponent.playerSendMessage(MESSAGES.WELCOME_REGISTER_MESSAGE));
             event.getPlayer().sendTitle(title);
         }

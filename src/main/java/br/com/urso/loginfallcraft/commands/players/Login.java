@@ -42,6 +42,7 @@ public class Login extends Command {
                     if (tent > 0) {
                         PluginBungeeData.getGamePlayerMap().get(player).setLoginAttempts(tent - 1);
                         ChatComponent.playerSendMessage(ChatComponent.format(MESSAGES.LOGIN_ATTEMPTS, tent), player);
+
                     } else {
                         player.disconnect(ChatComponent.playerSendMessage(MESSAGES.PASSWORD_INCORRECT));
                     }
